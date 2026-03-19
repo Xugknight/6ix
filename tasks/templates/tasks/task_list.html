@@ -1,22 +1,28 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Tasks</title>
 </head>
+
 <body>
     <h1>Task List</h1>
 
+    <a href="/create/">Create New Task</a>
+    <br><br>
+
     <ul>
         {% for task in tasks %}
-            <li>
-                {{ task.title }} - 
-                {% if task.completed %}
-                    ✅
-                {% else %}
-                    ❌
-                {% endif %}
-            </li>
+        <li>
+            {{ task.title }} -
+            {% if task.completed %}
+            ✅
+            {% else %}
+            ❌
+            {% endif %}
+        </li>
         {% endfor %}
     </ul>
 </body>
+
 </html>
