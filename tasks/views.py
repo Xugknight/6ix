@@ -19,3 +19,9 @@ def create_task(request):
         return redirect('task_list')
 
     return render(request, 'tasks/create_task.html')
+
+def toggle_complete(request, task_id):
+    task = Task.objects.get(id=task_id)
+    task.completed = not task.completed
+    task.save()
+    return redirect('task_list')

@@ -14,12 +14,14 @@
     <ul>
         {% for task in tasks %}
         <li>
-            {{ task.title }} -
+            {{ task.title }} - 
             {% if task.completed %}
-            ✅
+                ✅
             {% else %}
-            ❌
+                ❌
             {% endif %}
+        
+            <a href="/toggle/{{ task.id }}/">Toggle</a>
         </li>
         {% endfor %}
     </ul>
